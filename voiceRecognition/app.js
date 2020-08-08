@@ -10,7 +10,7 @@ const recognition = new SpeechRecognition();
 
 //implement on start function
 recognition.onstart = () => {
-    content.textContent= "";
+    content.value= "";
     listening.textContent = 'Listening.....';
 }
 
@@ -23,7 +23,10 @@ recognition.onresult = (event=>{
     //get the actual transcripted data from the results array
     const transcript = event.results[resultIndex][0].transcript;
     //display the content in the header that is defined in HTML file
-    content.textContent=transcript;
+    content.value =transcript;
+
+    //pass the transcript to the speak method so that it can speak aloud
+    speak(transcript);
 });
 
 //create a click action event on the button
@@ -33,3 +36,11 @@ talk.addEventListener('click', ()=>{
     recognition.start();
 });
 
+//use speech synthesys uttrerance to make the browser speak aloud.
+function speak(message){
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = message;
+    speech.volume =1;
+    //pass the SpeechSynthesisUtterance object to the windows speech API so that it talks back
+    window.speechSynthesis.speak(speech);
+}
