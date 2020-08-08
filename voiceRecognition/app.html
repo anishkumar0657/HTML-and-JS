@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
-    <input type="text" name="search" id="searchbox" class="content"/>
-    <button class="talk">Talk!!</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.css" rel="stylesheet">
+  <link href="../node_modules/@fortawesome/fontawesome-free/css/brands.css" rel="stylesheet">
+  <link href="../node_modules/@fortawesome/fontawesome-free/css/solid.css" rel="stylesheet">
+  <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <h2>Press the mic button and speak in the microphone!!!</h2>
+    <input type="text" name="search" id="searchbox" class="content" />
+    <button class="talk"><i class="fas fa-microphone"></i></button>
     <h4 class="listen"></h4>
-    <!-- <h3 class="content"></h3> -->
-    <script src="./app.js"></script>
+  </div>
+  <script src="./app.js"></script>
 </body>
+
 </html>
